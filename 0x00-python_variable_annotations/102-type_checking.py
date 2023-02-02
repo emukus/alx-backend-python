@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""Validate the following piece of code using mypy"""
 from typing import Tuple, List
 
 
