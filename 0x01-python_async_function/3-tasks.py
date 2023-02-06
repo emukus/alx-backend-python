@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""Function that takes an int and returns a asyncio.Task"""
 
 from asyncio import Task, create_task
 
