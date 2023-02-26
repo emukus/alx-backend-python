@@ -17,7 +17,7 @@ class TestAccessNestedMap(unittest.TestCase):
         ({"a": {"b": 2}}, ("a", "b"), 2),
     ])
     def test_access_nested_map(self, nested_map, path, expected_result):
-        from utils import access_nested_map
+        result = access_nested_map(nested_map, path)
         self.assertEqual(access_nested_map(nested_map, path), expected_result)
 
     @parameterized.expand([
@@ -25,7 +25,6 @@ class TestAccessNestedMap(unittest.TestCase):
         ({"a": 1}, ("a", "b")),
     ])
     def test_access_nested_map_exception(self, nested_map, path):
-        from utils import access_nested_map
         with self.assertRaises(KeyError) as cm:
             access_nested_map(nested_map, path)
         self.assertEqual(str(cm.exception), f"Key not found: {path[-1]}")
